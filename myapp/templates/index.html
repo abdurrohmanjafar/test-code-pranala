@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+</head>
+<body>
+    <form method="POST" action="/" id="form">
+        {% csrf_token %}
+        <div class="input-form">
+            {% comment %} validation tidak bisa difrontend untuk django template, sudah mencoba di dengan function formSubmit() index.js{% endcomment %}
+            <input type="number" name="angka" id="angka" placeholder="Input angka" min="0">
+            <p id="error">{{error}}</p>
+        </div>
+        
+        <div class="button-form">
+            <button name="task" type="submit" value="segitiga">Generate Segitiga</button>
+            <button name="task" type="submit" value="ganjil">Generate Bilangan Ganjil</button>
+            <button name="task" type="submit" value="prima">Generate Bilangan Prima</button>
+        </div>
+    </form>
+
+    <button onclick="myFunction()">CLICK</button>
+
+    <div>
+        <h2>Result:</h2>
+        <div>
+            {{result | linebreaks}}
+        </div>
+    </div>
+
+    <script src="{% static 'index.js' %}">
+    </script>
+</body>
+</html>

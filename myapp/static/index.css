@@ -1,0 +1,17 @@
+form input {
+    margin-bottom: 10px;
+}
+
+.button-form {
+    display: flex;
+    column-gap: 5px;
+}
+
+.input-form {
+    display: flex;
+    column-gap: 5px;
+}
+
+.input-form > p {
+    color: red;
+}
